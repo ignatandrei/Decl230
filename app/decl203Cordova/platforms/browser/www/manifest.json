@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "InfoRomania",
+  "short_name": "InfoRomania",
+  "version": "io.cordova.hellocordova",
+  "description": "InfoRomania - informatii firme si altele",
+  "author": "InfoRomania team - Andrei Ignat",
+  "icons": [],
+  "start_url": "index.html"
+}
