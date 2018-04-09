@@ -1,0 +1,92 @@
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink>Gaseste ONG!
+            <clr-tooltip *ngIf="existOng">
+                <clr-icon clrTooltipTrigger shape="check" size="24"></clr-icon>
+                <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
+                    <span>{{SelectedOng?.denumire}}</span>
+                </clr-tooltip-content>
+            </clr-tooltip>
+            <clr-tooltip *ngIf="!existOng">
+                <clr-icon clrTooltipTrigger shape="unknown-status" size="24"></clr-icon>
+            </clr-tooltip>
+
+        </button>
+        <clr-tab-content>
+
+            <app-ong (onSelectedOng)="onSelectedOng($event)"></app-ong>>
+        </clr-tab-content>
+    </clr-tab>
+
+
+    <clr-tab>
+        <button clrTabLink>Completeaza date proprii
+            <clr-tooltip *ngIf="IsCompletedPers">
+                <clr-icon clrTooltipTrigger shape="check" size="24"></clr-icon>
+                <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
+                    <span>{{SelectedPers?.nume}}</span>
+                </clr-tooltip-content>
+            </clr-tooltip>
+            <clr-tooltip *ngIf="!IsCompletedPers">
+                <clr-icon clrTooltipTrigger shape="unknown-status" size="24"></clr-icon>
+            </clr-tooltip>
+
+        </button>
+        <clr-tab-content>
+            <app-dateproprii (onPersoanaSelected)="onPersoanaSelected($event)"></app-dateproprii>
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>Genereaza pdf </button>
+        <clr-tab-content>
+            <div *ngIf="!IsCompletedPers">
+                Te rog sa completezi detalii despre tine
+            </div>
+            <div *ngIf="!existOng">
+                Te rog sa selectezi un ONG
+            </div>
+                
+            <button class="btn" (click)="genereaza()" *ngIf="PoateSaGenereze">Genereaza PDF
+                <clr-icon shape="export"></clr-icon>
+            </button>
+
+           <a [href]="result" *ngIf="result?.length>0"> Apasa aici ca sa downloadezi PDF</a>
+                
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>Legislatie</button>
+        <clr-tab-content>
+            De la <a href='http://www.mfinante.ro/acasa.html?method=detalii&id=999593153'>
+                http://www.mfinante.ro/acasa.html?method=detalii&id=999593153
+            </a>
+<div>
+        Ministerul Finanțelor Publice şi ANAF fac precizări privind procedura depunerii formularului 230 - 
+        "Cerere privind destinația sumei reprezentând până la 2% din impozitul anual pe veniturile din salarii și din pensii", 
+        în contextul măsurilor de simplificare și debirocratizare pe care le are în vedere în acest an.
+         Pentru aplicarea unitară la nivel naţional a prevederilor legale prin circulara transmisă structurilor teritoriale 
+         ale ANAF se clarifică posibilitatea depunerii formularului 230 şi de către entitatea nonprofit/unitatea de cult 
+         beneficiară a sumei redirecţionate. 
+         Măsura este tranzitorie, până la generalizarea depunerii tuturor formularelor prin mijloace electronice de
+          transmitere la distanţă prin intermediul SPV care reprezintă un alt obiectiv strategic
+           al Ministerului Finanțelor Publice 
+           Astfel, se are în vedere centralizarea de către entitatea nonprofit/unitatea de cult beneficiară
+            a formularelor 230, semnate de contribuabili și depunerea acestora la ANAF în baza unui
+             borderou în condiţiile asumării de către reprezentantul ONG/unităţii de cult a
+              răspunderii sub sancţiunea privind falsul în declaraţii şi uzul de fals.
+               În baza rolului activ şi ca măsură de securizare ANAF va notifica contribuabilii cu privire la opțiunea
+                exercitată prin formularul 230 primit, astfel încât aceștia să cunoască faptul că se dă curs cererii de direcţionare a cotei de 2%. Trebuie menționat faptul că persoana fizică poate anunța administrația fiscală, într-un termen rezonabil de 30 de zile, dacă sunt inadvertențe cu privire la opțiunea exercitată. 
+
+</div>
+
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>Despre</button>
+        <clr-tab-content>
+            Andrei Ignat
+
+
+        </clr-tab-content>
+    </clr-tab>
+</clr-tabs>

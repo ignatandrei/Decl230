@@ -1,0 +1,84 @@
+<input type="text" [(ngModel)]="term" [disabled]="loading" />
+<button class="btn btn-primary" (click)="findOng()" [disabled]="loading">Cauta
+        <clr-icon shape="search"></clr-icon>
+</button>
+<span class="spinner spinner-inline" *ngIf="loading">
+    Incarc date...
+</span>
+<clr-signpost *ngIf="isSelectedOng">
+    <button class="btn btn-link" clrSignpostTrigger>
+        {{SelectedOng.denumire}}
+    </button>
+    <clr-signpost-content [clrPosition]="'bottom-middle'" *clrIfOpen>
+        {{SelectedOng.registru}}
+    </clr-signpost-content>
+</clr-signpost>
+<clr-datagrid class="datagrid-compact">
+    <clr-dg-placeholder>Deocamdata nu avem ONG gasite...</clr-dg-placeholder>
+    <clr-dg-column>Numar</clr-dg-column>
+    <clr-dg-column>Denumire</clr-dg-column>
+    <clr-dg-column>Registru</clr-dg-column>
+    <clr-dg-column>Operatii</clr-dg-column>
+
+    <clr-dg-row *ngFor="let ong of ongList;let i=index;">
+        <clr-dg-cell>{{i+1}}</clr-dg-cell>
+        <clr-dg-cell>{{ong.denumire}}</clr-dg-cell>
+        <clr-dg-cell>{{ong.registru}}</clr-dg-cell>
+        <clr-dg-cell>
+           <button class="btn" (click)="selecteaza(ong)">Selecteaza pentru declaratie
+                <clr-icon shape="check-circle"></clr-icon>
+           </button>
+           <button class="btn" (click)="findDetails(ong)">Detalii<clr-icon shape="info-standard"></clr-icon></button>
+           <clr-modal [(clrModalOpen)]="tabActive[ong.registru]" > 
+            <h3 class="modal-title">Detalii pentru {{ong.denumire}}</h3>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        {{ong.denumire}}
+                    </div>
+                    <div class="card-block">
+                        <div class="card-title">
+                            {{ong.registru}}
+                        </div>
+                        <div class="card-text">
+                            <table class="table table-compact">
+                                <thead>
+                                    <tr>
+                                        <th class="left">Nume</th>
+                                        <th>Valoare</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let kv of ong.details">
+                                        <tr>
+                                            <td class="left">{{kv.key}}</td>
+                                            <td> {{kv.value}}</td>
+
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        ---
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button class="btn btn-sm btn-link" (click)="closeTab(ong)">Inchide</button>
+            </div>
+        </clr-modal>
+                    
+                    
+                
+           
+        </clr-dg-cell>
+
+    </clr-dg-row>
+
+
+    <clr-dg-footer>{{ongList?.length}} ONG</clr-dg-footer>
+</clr-datagrid>

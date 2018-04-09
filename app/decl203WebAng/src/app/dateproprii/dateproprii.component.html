@@ -1,0 +1,10 @@
+  <section class="form-block">
+      <label>Date</label>
+      <div class="form-group">
+          
+          <input type="text"  [(ngModel)]="pers.nume" placeholder="nume" (blur)="saveChanges('nume')" />          
+      </div>    
+      <div class="form-group">        
+        <input type="text"  [(ngModel)]="pers.prenume" placeholder="prenume"  (blur)="saveChanges('prenume')"/>          
+    </div>   
+  </section>
