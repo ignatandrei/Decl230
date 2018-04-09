@@ -26,6 +26,7 @@
     "@clr/icons": "0.11.12",
     "@clr/ui": "0.11.12",
     "@webcomponents/custom-elements": "1.1.0",
+    "angular-cli-ghpages": "^0.5.2",
     "core-js": "2.4.1",
     "mutation-observer": "1.0.3",
     "mutationobserver-shim": "0.3.2",
