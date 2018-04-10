@@ -37,7 +37,7 @@
         </clr-tab-content>
     </clr-tab>
     <clr-tab>
-        <button clrTabLink>Genereaza pdf </button>
+        <button clrTabLink>PDF</button>
         <clr-tab-content>
             <div *ngIf="!IsCompletedPers">
                 Te rog sa completezi detalii despre tine
@@ -55,7 +55,7 @@
         </clr-tab-content>
     </clr-tab>
     <clr-tab>
-        <button clrTabLink>Legislatie</button>
+        <button clrTabLink  [clrTabLinkInOverflow]="true" >Legislatie</button>
         <clr-tab-content>
             De la <a href='http://www.mfinante.ro/acasa.html?method=detalii&id=999593153'>
                 http://www.mfinante.ro/acasa.html?method=detalii&id=999593153
@@ -81,8 +81,8 @@
 
         </clr-tab-content>
     </clr-tab>
-    <clr-tab>
-        <button clrTabLink>Despre</button>
+    <clr-tab >
+        <button clrTabLink [clrTabLinkInOverflow]="true"> Despre</button>
         <clr-tab-content>
             <div>
                     Site:<a href='https://ignatandrei.github.io/Decl230/' target='_blank'>https://ignatandrei.github.io/Decl230/</a>
