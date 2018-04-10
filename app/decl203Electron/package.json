@@ -20,7 +20,7 @@
     },
     "publish": [{
       "provider" : "generic",      
-      "url":"https://ignatandrei.github.io/Decl230/electron",
+      "url":"https://ignatandrei.github.io/Decl230/",
       "channel":"latest"
 
     }]
