@@ -1,6 +1,6 @@
  call ng build --prod --build-optimizer
 
-
+node node_modules\angular-cli-ghpages\bin\angular-cli-ghpages
  robocopy dist ..\decl203Cordova\www\dist  /MIR /XD
 
  echo '!!!modify href FOR CORDOVA TO  .!'
@@ -11,12 +11,9 @@ cd ..\decl203Electron
 
  call npm run release
 
- copy dist\*.* ..\decl203WebAng\dist\  /MIR /XD
+rem copy dist\*.* ..\decl203WebAng\dist\  /MIR /XD
 
-rmdir ..\decl203WebAng\dist\electron\win-unpacked\ /s /q
+rem rmdir ..\decl203WebAng\dist\electron\win-unpacked\ /s /q
 
 cd ..\decl203WebAng
-
-
-node node_modules\angular-cli-ghpages\bin\angular-cli-ghpages
 
