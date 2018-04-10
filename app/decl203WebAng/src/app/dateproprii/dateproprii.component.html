@@ -1,10 +1,72 @@
-  <section class="form-block">
-      <label>Date</label>
-      <div class="form-group">
-          
-          <input type="text"  [(ngModel)]="pers.nume" placeholder="nume" (blur)="saveChanges('nume')" />          
-      </div>    
-      <div class="form-group">        
-        <input type="text"  [(ngModel)]="pers.prenume" placeholder="prenume"  (blur)="saveChanges('prenume')"/>          
-    </div>   
-  </section>
+<section class="form-block">
+  <label>Date</label>
+  <div class="form-group">
+    <label class="required">Nume</label>
+
+    <input type="text" [(ngModel)]="pers.nume" placeholder="nume" (blur)="saveChanges('nume')" />
+
+
+  </div>
+  <div class="form-group">
+    <label class="required">Prenume</label>
+    <input type="text" [(ngModel)]="pers.prenume" placeholder="prenume" (blur)="saveChanges('prenume')" />
+  </div>
+  <div class="form-group">
+    <label class="required">initialatatalui</label>
+    <input type="text" [(ngModel)]="pers.initialatatalui" placeholder="initialatatalui" (blur)="saveChanges('initialatatalui')"
+    />
+  </div>
+  <div class="form-group">
+    <label class="required">strada</label>
+    <input type="text" [(ngModel)]="pers.strada" placeholder="strada" (blur)="saveChanges('strada')" />
+  </div>
+  <div class="form-group">
+    <label class="required">numar</label>
+    <input type="text" [(ngModel)]="pers.numar" placeholder="numar" (blur)="saveChanges('numar')" />
+  </div>
+  <div class="form-group">
+    <label class="required">bloc</label>
+    <input type="text" [(ngModel)]="pers.bloc" placeholder="bloc" (blur)="saveChanges('bloc')" />
+  </div>
+  <div class="form-group">
+    <label class="required">scara</label>
+    <input type="text" [(ngModel)]="pers.scara" placeholder="scara" (blur)="saveChanges('scara')" />
+  </div>
+  <div class="form-group">
+    <label class="required">etaj</label>
+    <input type="text" [(ngModel)]="pers.etaj" placeholder="etaj" (blur)="saveChanges('etaj')" />
+  </div>
+  <div class="form-group">
+    <label class="required">ap</label>
+    <input type="text" [(ngModel)]="pers.ap" placeholder="ap" (blur)="saveChanges('ap')" />
+  </div>
+  <div class="form-group">
+    <label class="required">judet</label>
+    <input type="text" [(ngModel)]="pers.judet" placeholder="judet" (blur)="saveChanges('judet')" />
+  </div>
+  <div class="form-group">
+    <label class="required">localitate</label>
+    <input type="text" [(ngModel)]="pers.localitate" placeholder="localitate" (blur)="saveChanges('localitate')" />
+  </div>
+  <div class="form-group">
+    <label class="required">codpostal</label>
+    <input type="text" [(ngModel)]="pers.codpostal" placeholder="codpostal" (blur)="saveChanges('codpostal')" />
+  </div>
+  <div class="form-group">
+    <label class="required">cnp</label>
+    <input type="text" [(ngModel)]="pers.cnp" placeholder="cnp" (blur)="saveChanges('cnp')" />
+  </div>
+  <div class="form-group">
+    <label class="required">email</label>
+    <input type="text" [(ngModel)]="pers.email" placeholder="email" (blur)="saveChanges('email')" />
+  </div>
+  <div class="form-group">
+    <label class="required">telefon</label>
+    <input type="text" [(ngModel)]="pers.telefon" placeholder="telefon" (blur)="saveChanges('telefon')" />
+  </div>
+  <div class="form-group">
+    <label class="required">fax</label>
+    <input type="text" [(ngModel)]="pers.fax" placeholder="fax" (blur)="saveChanges('fax')" />
+  </div>
+
+</section>

@@ -1,6 +1,6 @@
 <clr-tabs>
     <clr-tab>
-        <button clrTabLink>Gaseste ONG!
+        <button clrTabLink>
             <clr-tooltip *ngIf="existOng">
                 <clr-icon clrTooltipTrigger shape="check" size="24"></clr-icon>
                 <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
@@ -10,7 +10,7 @@
             <clr-tooltip *ngIf="!existOng">
                 <clr-icon clrTooltipTrigger shape="unknown-status" size="24"></clr-icon>
             </clr-tooltip>
-
+            Gaseste ONG!
         </button>
         <clr-tab-content>
 
@@ -20,7 +20,7 @@
 
 
     <clr-tab>
-        <button clrTabLink>Completeaza date proprii
+        <button clrTabLink>
             <clr-tooltip *ngIf="IsCompletedPers">
                 <clr-icon clrTooltipTrigger shape="check" size="24"></clr-icon>
                 <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
@@ -30,7 +30,7 @@
             <clr-tooltip *ngIf="!IsCompletedPers">
                 <clr-icon clrTooltipTrigger shape="unknown-status" size="24"></clr-icon>
             </clr-tooltip>
-
+            Completeaza date proprii
         </button>
         <clr-tab-content>
             <app-dateproprii (onPersoanaSelected)="onPersoanaSelected($event)"></app-dateproprii>
