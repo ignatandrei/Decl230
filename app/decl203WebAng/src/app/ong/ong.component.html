@@ -2,6 +2,7 @@
 <button class="btn btn-primary" (click)="findOng()" [disabled]="loading">Cauta
         <clr-icon shape="search"></clr-icon>
 </button>
+<span>{{numberONG}}</span>
 <span class="spinner spinner-inline" *ngIf="loading">
     Incarc date...
 </span>

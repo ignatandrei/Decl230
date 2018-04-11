@@ -20,6 +20,7 @@ export class ONGService {
   private infoONG: string = 'api/ong/FindOng/';
   private infoDetailsONG: string = 'api/ong/FindDetailsOng/';
   private info203: string = 'api/ong/Make203/';
+  private infoCount: string = 'api/ong/CountData/asociatii';
   constructor(private http: HttpClient, private messageService: MessageService) {
           
   }
@@ -52,7 +53,15 @@ export class ONGService {
       .map(it=>it.map(t=>new Ong(t)));
         
   }
-  
+  getCount():Observable<KeyValue>{
+    const url = environment.urlAPI +  this.infoCount ;
+    
+    this.messageService.add('number data ' + url);
+    return this.http
+      .get<KeyValue>(url, httpOptions);
+      
+
+  }
   getDetails(find: string): Observable<KeyValue[]> {
     var url = this.infoDetailsONG ;
     url = environment.urlAPI + url;

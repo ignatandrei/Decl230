@@ -34,11 +34,10 @@ export class AppComponent {
 
     return this.IsCompletedPers && this.existOng;
 
-  }
+  } 
   result:string;
   genereaza(){
-
-    
+    this.result="";    
     this.ongService.make203(this.SelectedOng.registru,this.SelectedPers).subscribe(
       it=>{
         console.log(it.value);
