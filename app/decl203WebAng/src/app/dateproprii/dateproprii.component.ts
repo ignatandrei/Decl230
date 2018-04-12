@@ -27,15 +27,22 @@ export class DatepropriiComponent implements OnInit, OnChanges {
     if (this.localStorage) {
       localStorage.setItem("nume", this.pers.nume);
       localStorage.setItem("prenume", this.pers.prenume);
+
     }
   }
   saveChanges(proName: string) {
-    localStorage.setItem(proName, this.pers[proName]);
-    this.onPersoanaSelected.emit(this.pers);
+    if (this.localStorage) {
+      console.log('local storage start ' + proName);
+      localStorage.setItem(proName, this.pers[proName]);
+      console.log('local storage end ' + proName);
+    }
+    //this.onPersoanaSelected.emit(this.pers);
   }
 
   ngOnInit() {
     this.pers.nume = localStorage.getItem("nume");
+
+    console.log(this.pers.nume);
     this.pers.prenume = localStorage.getItem("prenume");
     this.pers.initialatatalui = localStorage.getItem("initialatatalui");
     this.pers.strada = localStorage.getItem("strada");
@@ -54,6 +61,11 @@ export class DatepropriiComponent implements OnInit, OnChanges {
 
 
     this.onPersoanaSelected.emit(this.pers);
+  }
+  doneInput() {
+    console.log('start');
+    this.onPersoanaSelected.emit(this.pers);
+    console.log('end');
   }
 
 }

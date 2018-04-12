@@ -1,5 +1,8 @@
 <section class="form-block">
-  <label>Date</label>
+  <label>Date personale ( nu le stocam, doar le punem in PDF)</label>
+  <br />
+  <label *ngIf="!pers.IsValid" > Va rugam completati {{DeCompletat}}</label>
+  
   <div class="form-group">
     <label class="required">Nume</label>
 
@@ -68,5 +71,6 @@
     <label class="required">fax</label>
     <input type="text" [(ngModel)]="pers.fax" placeholder="fax" (blur)="saveChanges('fax')" />
   </div>
+  
 
 </section>

@@ -25,8 +25,9 @@ export class Persoana {
         return (x || '').length > 0;
     }
     public get isValid(): boolean {
-
-        return !this.exists(this.DeCompletat);
+        var c=!this.exists(this.DeCompletat);
+        console.log('is valid:'+ c);
+        return c;
 
     }
 
@@ -37,6 +38,9 @@ export class Persoana {
 
         if (!this.exists(this.prenume))
             return "prenume";
+
+        if (!this.exists(this.initialatatalui))
+            return "intiala tatalui";
         if (!this.exists(this.judet))
             return "judet";
         if (!this.exists(this.localitate))

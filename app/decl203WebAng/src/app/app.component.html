@@ -12,10 +12,12 @@
             </clr-tooltip>
             Gaseste ONG!
         </button>
+        <ng-template [(clrIfActive)]="OngNecompletat">
         <clr-tab-content>
 
-            <app-ong (onSelectedOng)="onSelectedOng($event)"></app-ong>>
+            <app-ong (onSelectedOng)="onSelectedOng($event)" [SelectedOng]="SelectedOng" ></app-ong>>
         </clr-tab-content>
+        </ng-template>
     </clr-tab>
 
 
@@ -32,27 +34,32 @@
             </clr-tooltip>
             Completeaza date proprii
         </button>
-        <clr-tab-content>
-            <app-dateproprii (onPersoanaSelected)="onPersoanaSelected($event)"></app-dateproprii>
-        </clr-tab-content>
+        <ng-template [clrIfActive]="PersNecompletat">
+            <clr-tab-content>
+                <app-dateproprii (onPersoanaSelected)="onPersoanaSelected($event)"></app-dateproprii>
+            </clr-tab-content>
+        </ng-template>
     </clr-tab>
     <clr-tab>
         <button clrTabLink>PDF</button>
-        <clr-tab-content>
-            <div *ngIf="!IsCompletedPers">
-                Te rog sa completezi detalii despre tine
-            </div>
-            <div *ngIf="!existOng">
-                Te rog sa selectezi un ONG
-            </div>
+        <ng-template [clrIfActive]="PoateSaGenereze">
+            <clr-tab-content>
+                <div *ngIf="!IsCompletedPers">
+                    Te rog sa completezi date proprii
+                </div>
+                <div *ngIf="!existOng">
+                    Te rog sa selectezi un ONG
+                </div>
 
-            <button class="btn" (click)="genereaza()" *ngIf="PoateSaGenereze">Genereaza PDF
-                <clr-icon shape="export"></clr-icon>
-            </button>
+                <button class="btn" (click)="genereaza()" *ngIf="PoateSaGenereze">Genereaza PDF
+                        {{SelectedOng.denumire}}
+                    <clr-icon shape="export"></clr-icon>
+                </button>
+                
+                <a [href]="result" *ngIf="result?.length>0"> Apasa aici ca sa downloadezi PDF</a>
 
-            <a [href]="result" *ngIf="result?.length>0"> Apasa aici ca sa downloadezi PDF</a>
-
-        </clr-tab-content>
+            </clr-tab-content>
+        </ng-template>
     </clr-tab>
     <clr-tab>
         <button clrTabLink [clrTabLinkInOverflow]="true">Legislatie</button>

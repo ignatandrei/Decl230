@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Inject, OnChanges, SimpleChanges, EventEmitter, Output, Input } from '@angular/core';
 import { MessageService } from '../message.service';
 
 import { ONGService } from './ong.service';
@@ -13,6 +13,7 @@ import { Subscriber } from 'rxjs/Subscriber';
   styleUrls: ['./ong.component.css']
 })
 export class OngComponent implements OnInit {
+
 
   @Output() onSelectedOng = new EventEmitter<Ong>();
   ongActive: boolean = true;
@@ -39,7 +40,7 @@ export class OngComponent implements OnInit {
     this.SelectedOng = ONG;
     this.onSelectedOng.emit(ONG);
   }
-
+  @Input()
   public SelectedOng: Ong = null;
   public get isSelectedOng(): boolean {
     return this.SelectedOng != null;
