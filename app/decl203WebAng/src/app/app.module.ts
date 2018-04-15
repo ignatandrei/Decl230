@@ -11,12 +11,16 @@ import { OngComponent } from './ong/ong.component';
 import { ONGService } from './ong/ong.service';
 import { DatepropriiComponent } from './dateproprii/dateproprii.component';
 import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
+import { AppRoutingModule } from './app-routing.module';
+import { PdfgeneratorComponent } from './pdfgenerator/pdfgenerator.component';
+import { ExchangeDataService } from './exchange-data.service';
+import { DespreComponent } from './despre/despre.component';
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,  
     OngComponent, 
-    DatepropriiComponent,
+    DatepropriiComponent, PdfgeneratorComponent, DespreComponent,
     
     
   ],
@@ -26,11 +30,13 @@ import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
     ClarityModule,
     HttpClientModule,  
     FormsModule  ,
-    PdfViewerModule
+    PdfViewerModule,
+    AppRoutingModule
   ],
   providers: [
     MessageService,
     ONGService,
+    ExchangeDataService,
     { provide: 'LOCALSTORAGE', useFactory: getLocalStorage }
   ],
   bootstrap: [AppComponent]

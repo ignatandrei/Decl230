@@ -1,15 +1,19 @@
-import { Component , ViewChild} from '@angular/core';
-import {ClrWizard} from '@clr/angular';
+import { Component, ViewChild } from '@angular/core';
+import { ClrWizard } from '@clr/angular';
 import { FormsModule } from '@angular/forms';
 import { Ong } from './ong/ong';
 import { Persoana } from './dateproprii/persoana';
 import { ONGService } from './ong/ong.service';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { interval } from 'rxjs/observable/interval';
+import { MessageService } from './message.service';
+import { ExchangeDataService } from './exchange-data.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 enum Completion230 {
-  None           = 0,
-  ONG       = 1 << 0,
-  Persoana         = 1 << 1,
+  None = 0,
+  ONG = 1 << 0,
+  Persoana = 1 << 1,
   All = ~(~0 << 2)
 }
 
@@ -21,59 +25,35 @@ enum Completion230 {
 export class AppComponent {
   SelectedPers: Persoana;
   SelectedOng: Ong;
-  constructor( private ongService:ONGService){
-    
-  } 
-  
+  constructor(private ongService: ONGService, private messageService: MessageService, private ex: ExchangeDataService,
+    private router: Router) {
+    this.ex.OngConfirmed$.subscribe(it => {
+      this.existOng = true;
+      this.SelectedOng = it;
+      this.selectNext();
 
-  get existOng(){
-    const b=this.SelectedOng != null;
-    console.log('exist ong' +b);
-    return b;
+    });
+    this.ex.PersoanaConfirmed$.subscribe(it => {
+      this.messageService.add("selected pers");
+      this.IsCompletedPers = it.isValid;
+      this.SelectedPers = it;
+      this.selectNext();
+    });
   }
-  onSelectedOng(ONG:Ong){
-    this.SelectedOng=ONG;        
+  IsCompletedPers = false;
+  existOng = false;
+  selectNext(): void {
+    if (!this.existOng) {
+      this.messageService.add("goto ong");
+      this.router.navigate(['/ong']);
+      return;
+    }
+    if (!this.IsCompletedPers) {
+      this.messageService.add("goto pers");
+      this.router.navigate(['/pers']);
+      return;
+    }
+    this.router.navigate(['/pdfgen']);
 
-  }
-  onPersoanaSelected(pers:Persoana){
-    this.SelectedPers=pers;
-      
-  }
-  
-  get IsCompletedPers(){
-    const b=(this.SelectedPers != null && this.SelectedPers.isValid);
-    console.log("completed " + b)
-    return b;
-  }
-  get OngNecompletat():boolean{
-
-    return !this.existOng;
-  }
-  get PersNecompletat():boolean{
-    if(this.OngNecompletat)
-      return false;
-
-    if(!this.IsCompletedPers)
-      return true;
-
-    return false;
-  }
-
-  get PoateSaGenereze():boolean{
-
-    return this.IsCompletedPers && this.existOng;
-
-  } 
-  result:string;
-  genereaza(){
-    this.result="";    
-    this.ongService.make203(this.SelectedOng.registru,this.SelectedPers).subscribe(
-      it=>{
-        console.log(it.value);
-        this.result=it.value;
-        interval(1000*60*5).subscribe(it=>console.log(it));
-        
-      }
-    );
   }
 }

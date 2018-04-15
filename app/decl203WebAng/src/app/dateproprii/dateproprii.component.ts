@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Persoana } from './persoana';
+import { MessageService } from '../message.service';
+import { ExchangeDataService } from '../exchange-data.service';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { Persoana } from './persoana';
 })
 
 export class DatepropriiComponent implements OnInit, OnChanges {
-  constructor(@Inject('LOCALSTORAGE') private localStorage: any) {
+  constructor(@Inject('LOCALSTORAGE') private localStorage: any, private messageService: MessageService, private ex:ExchangeDataService) {
     this.pers = new Persoana();
   }
 
@@ -23,26 +25,22 @@ export class DatepropriiComponent implements OnInit, OnChanges {
     return this.pers.DeCompletat;
   }
   ngOnChanges(changes: SimpleChanges): void {
-
-    if (this.localStorage) {
-      localStorage.setItem("nume", this.pers.nume);
-      localStorage.setItem("prenume", this.pers.prenume);
-
-    }
+    //console.log('ng on changes ' );
+   
   }
   saveChanges(proName: string) {
-    if (this.localStorage) {
-      console.log('local storage start ' + proName);
-      localStorage.setItem(proName, this.pers[proName]);
-      console.log('local storage end ' + proName);
+    //console.log('save changes' + proName);
+    if (this.localStorage) {      
+      //console.log('local storage start ' + proName);
+      localStorage.setItem(proName, this.pers[proName]);      
+      //console.log('local storage end ' + proName);
     }
     //this.onPersoanaSelected.emit(this.pers);
   }
 
   ngOnInit() {
+    
     this.pers.nume = localStorage.getItem("nume");
-
-    console.log(this.pers.nume);
     this.pers.prenume = localStorage.getItem("prenume");
     this.pers.initialatatalui = localStorage.getItem("initialatatalui");
     this.pers.strada = localStorage.getItem("strada");
@@ -60,12 +58,31 @@ export class DatepropriiComponent implements OnInit, OnChanges {
     this.pers.fax = localStorage.getItem("fax");
 
 
-    this.onPersoanaSelected.emit(this.pers);
+    //this.onPersoanaSelected.emit(this.pers);
   }
   doneInput() {
-    console.log('start');
-    this.onPersoanaSelected.emit(this.pers);
-    console.log('end');
+    //console.log('start');
+        
+    localStorage.setItem("nume", this.pers.nume);
+     localStorage.setItem("prenume",this.pers.prenume );
+     localStorage.setItem("initialatatalui",this.pers.initialatatalui);
+     localStorage.setItem("strada",this.pers.strada);
+      localStorage.setItem("numar", this.pers.numar);
+     localStorage.setItem("bloc",this.pers.bloc);
+     localStorage.setItem("scara",this.pers.scara);
+     localStorage.setItem("etaj",this.pers.etaj);
+     localStorage.setItem("ap",this.pers.ap );
+     localStorage.setItem("judet",this.pers.judet);
+     localStorage.setItem("localitate",this.pers.localitate);
+     localStorage.setItem("codpostal",this.pers.codpostal);
+     localStorage.setItem("cnp",this.pers.cnp);
+     localStorage.setItem("email",this.pers.email);
+     localStorage.setItem("telefon",this.pers.telefon);
+      localStorage.setItem("fax",this.pers.fax);
+      this.messageService.add("emit persoana");
+    //this.onPersoanaSelected.emit(this.pers);
+      this.ex.confirmPersoana(this.pers);
+    //console.log('end');
   }
 
 }

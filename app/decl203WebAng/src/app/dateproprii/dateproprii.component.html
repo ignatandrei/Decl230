@@ -1,75 +1,75 @@
 <section class="form-block">
   <label>Date personale ( nu le stocam, doar le punem in PDF)</label>
   <br />
-  <label *ngIf="!pers.IsValid" > Va rugam completati {{DeCompletat}}</label>
-  
+  <label *ngIf="pers.DeCompletat.length>0" > Va rugam completati {{DeCompletat}}!</label>
+  <button  (click)="doneInput()"> Salveaza date</button>
+
   <div class="form-group">
     <label class="required">Nume</label>
 
-    <input type="text" [(ngModel)]="pers.nume" placeholder="nume" (blur)="saveChanges('nume')" />
+    <input type="text" [(ngModel)]="pers.nume" placeholder="nume"  />
 
 
   </div>
   <div class="form-group">
     <label class="required">Prenume</label>
-    <input type="text" [(ngModel)]="pers.prenume" placeholder="prenume" (blur)="saveChanges('prenume')" />
+    <input type="text" [(ngModel)]="pers.prenume" placeholder="prenume"  />
   </div>
   <div class="form-group">
     <label class="required">initialatatalui</label>
-    <input type="text" [(ngModel)]="pers.initialatatalui" placeholder="initialatatalui" (blur)="saveChanges('initialatatalui')"
-    />
+    <input type="text" [(ngModel)]="pers.initialatatalui" placeholder="initialatatalui" />
   </div>
   <div class="form-group">
     <label class="required">strada</label>
-    <input type="text" [(ngModel)]="pers.strada" placeholder="strada" (blur)="saveChanges('strada')" />
+    <input type="text" [(ngModel)]="pers.strada" placeholder="strada" />
   </div>
   <div class="form-group">
     <label class="required">numar</label>
-    <input type="text" [(ngModel)]="pers.numar" placeholder="numar" (blur)="saveChanges('numar')" />
+    <input type="text" [(ngModel)]="pers.numar" placeholder="numar"  />
   </div>
   <div class="form-group">
     <label class="required">bloc</label>
-    <input type="text" [(ngModel)]="pers.bloc" placeholder="bloc" (blur)="saveChanges('bloc')" />
+    <input type="text" [(ngModel)]="pers.bloc" placeholder="bloc"/>
   </div>
   <div class="form-group">
     <label class="required">scara</label>
-    <input type="text" [(ngModel)]="pers.scara" placeholder="scara" (blur)="saveChanges('scara')" />
+    <input type="text" [(ngModel)]="pers.scara" placeholder="scara" />
   </div>
   <div class="form-group">
     <label class="required">etaj</label>
-    <input type="text" [(ngModel)]="pers.etaj" placeholder="etaj" (blur)="saveChanges('etaj')" />
+    <input type="text" [(ngModel)]="pers.etaj" placeholder="etaj"  />
   </div>
   <div class="form-group">
     <label class="required">ap</label>
-    <input type="text" [(ngModel)]="pers.ap" placeholder="ap" (blur)="saveChanges('ap')" />
+    <input type="text" [(ngModel)]="pers.ap" placeholder="ap"  />
   </div>
   <div class="form-group">
     <label class="required">judet</label>
-    <input type="text" [(ngModel)]="pers.judet" placeholder="judet" (blur)="saveChanges('judet')" />
+    <input type="text" [(ngModel)]="pers.judet" placeholder="judet"  />
   </div>
   <div class="form-group">
     <label class="required">localitate</label>
-    <input type="text" [(ngModel)]="pers.localitate" placeholder="localitate" (blur)="saveChanges('localitate')" />
+    <input type="text" [(ngModel)]="pers.localitate" placeholder="localitate"  />
   </div>
   <div class="form-group">
     <label class="required">codpostal</label>
-    <input type="text" [(ngModel)]="pers.codpostal" placeholder="codpostal" (blur)="saveChanges('codpostal')" />
+    <input type="text" [(ngModel)]="pers.codpostal" placeholder="codpostal" />
   </div>
   <div class="form-group">
     <label class="required">cnp</label>
-    <input type="text" [(ngModel)]="pers.cnp" placeholder="cnp" (blur)="saveChanges('cnp')" />
+    <input type="text" [(ngModel)]="pers.cnp" placeholder="cnp"  />
   </div>
   <div class="form-group">
     <label class="required">email</label>
-    <input type="text" [(ngModel)]="pers.email" placeholder="email" (blur)="saveChanges('email')" />
+    <input type="text" [(ngModel)]="pers.email" placeholder="email"  />
   </div>
   <div class="form-group">
     <label class="required">telefon</label>
-    <input type="text" [(ngModel)]="pers.telefon" placeholder="telefon" (blur)="saveChanges('telefon')" />
+    <input type="text" [(ngModel)]="pers.telefon" placeholder="telefon"  />
   </div>
   <div class="form-group">
     <label class="required">fax</label>
-    <input type="text" [(ngModel)]="pers.fax" placeholder="fax" (blur)="saveChanges('fax')" />
+    <input type="text" [(ngModel)]="pers.fax" placeholder="fax"  />
   </div>
   
 

@@ -1,0 +1,30 @@
+<div *ngIf="!IsCompletedPers">
+  <button class="btn" (click)="gotoPers()">
+    Te rog sa completezi date proprii 
+  </button>  
+
+</div>
+<div *ngIf="IsCompletedPers">
+    {{SelectedPers.nume}}
+  
+  </div>
+<div *ngIf="!existOng">
+    <button class="btn" (click)="gotoOng()">
+        Te rog sa selectezi un ONG
+    </button>
+  
+</div>
+<div *ngIf="existOng">
+    {{SelectedOng.denumire}}
+  
+  
+</div>
+
+<button class="btn" (click)="genereaza()" *ngIf="IsCompletedPers && existOng">Genereaza PDF       
+  <clr-icon shape="export"></clr-icon>
+</button>
+
+<a [href]="result" *ngIf="result?.length>0"> Apasa aici ca sa downloadezi PDF</a>
+
+
+

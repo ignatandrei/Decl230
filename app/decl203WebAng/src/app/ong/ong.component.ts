@@ -5,6 +5,7 @@ import { ONGService } from './ong.service';
 import { Ong } from './ong';
 import 'rxjs/add/operator/finally';
 import { Subscriber } from 'rxjs/Subscriber';
+import { ExchangeDataService } from '../exchange-data.service';
 
 
 @Component({
@@ -24,8 +25,10 @@ export class OngComponent implements OnInit {
   public loadingTerm: string;
   public loading: boolean;
   constructor(private messageService: MessageService,
-    private myService: ONGService,
+    private myService: ONGService,private ex:ExchangeDataService,
     @Inject('LOCALSTORAGE') private localStorage: any
+    
+
   ) {
     this.ongList = [];
     if (this.localStorage != null) {
@@ -34,11 +37,15 @@ export class OngComponent implements OnInit {
     this.loading = false;
     this.tabONGLoaded = [];
     this.tabActive = {};
+    this.ex.OngConfirmed$.subscribe(it=>{
+      this.SelectedOng = it;
+    });
 
   }
   public selecteaza(ONG: Ong) {
-    this.SelectedOng = ONG;
-    this.onSelectedOng.emit(ONG);
+   
+    //this.onSelectedOng.emit(ONG);
+    this.ex.confirmOng(ONG);
   }
   @Input()
   public SelectedOng: Ong = null;
@@ -79,7 +86,7 @@ export class OngComponent implements OnInit {
       );
   }
   findDetails(ong: Ong) {
-    this.findTotalNumber();
+    
     var exists = (this.tabONGLoaded.find(it => it.registru == ong.registru));
     if (exists != null) {
       this.tabActive[ong.registru] = true;
@@ -108,7 +115,7 @@ export class OngComponent implements OnInit {
     this.ongActive = true;
   }
   findOng() {
-    this.findTotalNumber();
+    
     if (this.localStorage != null) {
       this.localStorage.setItem("ongsearch", this.term);
     }

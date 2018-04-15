@@ -25,8 +25,9 @@ export class Persoana {
         return (x || '').length > 0;
     }
     public get isValid(): boolean {
-        var c=!this.exists(this.DeCompletat);
-        console.log('is valid:'+ c);
+        const com=this.DeCompletat;
+        var c=!this.exists(com);
+        //console.log('is valid:'+ c + " => "+ this.DeCompletat);
         return c;
 
     }
