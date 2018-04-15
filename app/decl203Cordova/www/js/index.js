@@ -38,8 +38,7 @@ var app = {
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-        window.location.href="index.html";
+        receivedElement.setAttribute('style', 'display:block;');        
         console.log('Received Event: ' + id);
     }
 };
