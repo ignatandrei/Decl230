@@ -6,7 +6,7 @@
         <div class="content-area">
             <router-outlet></router-outlet>
         </div>
-        <clr-vertical-nav [clrVerticalNavCollapsible]="true" >
+        <clr-vertical-nav [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="true">
             <a clrVerticalNavLink routerLink="./ong" routerLinkActive="active">
                 <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
                 <clr-tooltip *ngIf="existOng">
