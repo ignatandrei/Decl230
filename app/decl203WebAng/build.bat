@@ -1,7 +1,7 @@
- call ng build --prod --build-optimizer
+call ng build --prod --build-optimizer
 
 node node_modules\angular-cli-ghpages\bin\angular-cli-ghpages
- robocopy dist ..\decl203Cordova\www\dist  /MIR /XD
+robocopy dist ..\decl203Cordova\www\dist  /MIR /XD
 
  echo '!!!modify href FOR CORDOVA TO  .!'
 
