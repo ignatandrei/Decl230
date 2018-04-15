@@ -39,7 +39,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-        window.location.href="dist/index.html";
+        window.location.href="index.html";
         console.log('Received Event: ' + id);
     }
 };
