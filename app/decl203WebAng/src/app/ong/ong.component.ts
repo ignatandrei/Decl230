@@ -114,6 +114,10 @@ export class OngComponent implements OnInit {
     this.tabActive[ong.registru] = false;
     this.ongActive = true;
   }
+  findADCES(){
+    this.term='ASOCIATIA PENTRU DEZVOLTARE, CREATIVITATE SI EXCELENTA IN SOFTWARE';
+    this.findOng();
+  }
   findOng() {
     
     if (this.localStorage != null) {
