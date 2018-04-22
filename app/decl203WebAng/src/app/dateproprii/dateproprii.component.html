@@ -1,76 +1,152 @@
-<section class="form-block">
-  <label>Date personale ( nu le stocam, doar le punem in PDF)</label>
-  <br />
-  <label *ngIf="pers.DeCompletat.length>0" > Va rugam completati {{DeCompletat}}!</label>
-  <button  (click)="doneInput()"> Salveaza date</button>
+<section class="compact">
+  <clr-stack-view>
+    <clr-stack-header>Date personale ( nu le stocam, doar le punem in PDF)</clr-stack-header>
 
-  <div class="form-group">
-    <label class="required">Nume</label>
+    <clr-stack-block *ngIf="pers.DeCompletat.length>0">
+      <clr-stack-label>De completat</clr-stack-label>
+      <clr-stack-content>Va rugam completati {{DeCompletat}}!</clr-stack-content>
+    </clr-stack-block>
 
-    <input type="text" [(ngModel)]="pers.nume" placeholder="nume"  />
+    <clr-stack-block [clrSbExpanded]="true">
+      <clr-stack-label>Date personale</clr-stack-label>
+      <clr-stack-content>Nume, prenume,...</clr-stack-content>
+      <clr-stack-block>
+        <clr-stack-label>Nume</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.nume" placeholder="nume" />
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+        <clr-stack-label>Prenume</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.prenume" placeholder="prenume" />
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+        <clr-stack-label>Initiala tatalui</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.initialatatalui" placeholder="initialatatalui" />
+        </clr-stack-content>
+      </clr-stack-block>
+
+      <clr-stack-block>
+          <clr-stack-label>CNP</clr-stack-label>
+          <clr-stack-content>
+              <input type="text" [(ngModel)]="pers.cnp" placeholder="cnp" />
+          </clr-stack-content>
+        </clr-stack-block>
+      
+
+    </clr-stack-block>
+    <clr-stack-block [clrSbExpanded]="true">
+        <clr-stack-label>Date de contact</clr-stack-label>
+        <clr-stack-content>Email, telefon,...</clr-stack-content>
+
+        <clr-stack-block>
+            <clr-stack-label>Email</clr-stack-label>
+            <clr-stack-content>
+                <input type="text" [(ngModel)]="pers.email" placeholder="email" />
+            </clr-stack-content>
+          </clr-stack-block>
 
 
-  </div>
-  <div class="form-group">
-    <label class="required">Prenume</label>
-    <input type="text" [(ngModel)]="pers.prenume" placeholder="prenume"  />
-  </div>
-  <div class="form-group">
-    <label class="required">initialatatalui</label>
-    <input type="text" [(ngModel)]="pers.initialatatalui" placeholder="initialatatalui" />
-  </div>
-  <div class="form-group">
-    <label class="required">strada</label>
-    <input type="text" [(ngModel)]="pers.strada" placeholder="strada" />
-  </div>
-  <div class="form-group">
-    <label class="required">numar</label>
-    <input type="text" [(ngModel)]="pers.numar" placeholder="numar"  />
-  </div>
-  <div class="form-group">
-    <label class="required">bloc</label>
-    <input type="text" [(ngModel)]="pers.bloc" placeholder="bloc"/>
-  </div>
-  <div class="form-group">
-    <label class="required">scara</label>
-    <input type="text" [(ngModel)]="pers.scara" placeholder="scara" />
-  </div>
-  <div class="form-group">
-    <label class="required">etaj</label>
-    <input type="text" [(ngModel)]="pers.etaj" placeholder="etaj"  />
-  </div>
-  <div class="form-group">
-    <label class="required">ap</label>
-    <input type="text" [(ngModel)]="pers.ap" placeholder="ap"  />
-  </div>
-  <div class="form-group">
-    <label class="required">judet</label>
-    <input type="text" [(ngModel)]="pers.judet" placeholder="judet"  />
-  </div>
-  <div class="form-group">
-    <label class="required">localitate</label>
-    <input type="text" [(ngModel)]="pers.localitate" placeholder="localitate"  />
-  </div>
-  <div class="form-group">
-    <label class="required">codpostal</label>
-    <input type="text" [(ngModel)]="pers.codpostal" placeholder="codpostal" />
-  </div>
-  <div class="form-group">
-    <label class="required">cnp</label>
-    <input type="text" [(ngModel)]="pers.cnp" placeholder="cnp"  />
-  </div>
-  <div class="form-group">
-    <label class="required">email</label>
-    <input type="text" [(ngModel)]="pers.email" placeholder="email"  />
-  </div>
-  <div class="form-group">
-    <label class="required">telefon</label>
-    <input type="text" [(ngModel)]="pers.telefon" placeholder="telefon"  />
-  </div>
-  <div class="form-group">
-    <label class="required">fax</label>
-    <input type="text" [(ngModel)]="pers.fax" placeholder="fax"  />
-  </div>
+          <clr-stack-block>
+              <clr-stack-label>telefon</clr-stack-label>
+              <clr-stack-content>
+                  <input type="text" [(ngModel)]="pers.telefon" placeholder="telefon" />
+              </clr-stack-content>
+            </clr-stack-block>
+
+
+            
+          <clr-stack-block>
+              <clr-stack-label>fax</clr-stack-label>
+              <clr-stack-content>
+                  <input type="text" [(ngModel)]="pers.fax" placeholder="fax" />
+              </clr-stack-content>
+            </clr-stack-block>
+    </clr-stack-block>
+    
+    <clr-stack-block [clrSbExpanded]="true">
+      <clr-stack-label>Adresa</clr-stack-label>
+      <clr-stack-content>Oras, strada...</clr-stack-content>
+      <clr-stack-block>
+        <clr-stack-label>Judet</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.judet" placeholder="judet" />
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+        <clr-stack-label>Oras</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.localitate" placeholder="localitate" />
+
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+        <clr-stack-label>Strada</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.strada" placeholder="strada" />
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+        <clr-stack-label>Numar</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.numar" placeholder="numar" />
+        </clr-stack-content>
+      </clr-stack-block>
+
+    
+
+
+
+      <clr-stack-block>
+        <clr-stack-label>Bloc</clr-stack-label>
+        <clr-stack-content>
+          <input type="text" [(ngModel)]="pers.bloc" placeholder="bloc" />
+        </clr-stack-content>
+      </clr-stack-block>
+      <clr-stack-block>
+          <clr-stack-label>Scara</clr-stack-label>
+          <clr-stack-content>
+              <input type="text" [(ngModel)]="pers.scara" placeholder="scara" />
+          </clr-stack-content>
+        </clr-stack-block>
+
+        <clr-stack-block>
+            <clr-stack-label>etaj</clr-stack-label>
+            <clr-stack-content>
+                <input type="text" [(ngModel)]="pers.etaj" placeholder="etaj" />
+            </clr-stack-content>
+          </clr-stack-block>
+
+          <clr-stack-block>
+              <clr-stack-label>ap</clr-stack-label>
+              <clr-stack-content>
+                  <input type="text" [(ngModel)]="pers.ap" placeholder="aparatment" />
+              </clr-stack-content>
+            </clr-stack-block>
+
+
+            <clr-stack-block>
+                <clr-stack-label>Cod Postal</clr-stack-label>
+                <clr-stack-content>
+                    <input type="text" [(ngModel)]="pers.codpostal" placeholder="codpostal" />
+                </clr-stack-content>
+              </clr-stack-block>
   
 
+
+    </clr-stack-block>
+  </clr-stack-view>
+
+
+
+
+  <button (click)="doneInput()"> Salveaza date</button>
+
+
+  
+  
+  
 </section>
