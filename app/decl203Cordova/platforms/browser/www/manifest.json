@@ -1,11 +1,12 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "InfoRomania",
-  "short_name": "InfoRomania",
+  "name": "Decl230",
+  "short_name": "Decl230",
   "version": "io.cordova.hellocordova",
-  "description": "InfoRomania - informatii firme si altele",
-  "author": "InfoRomania team - Andrei Ignat",
+  "description": "Declaratia 230  -2%",
+  "author": "- Andrei Ignat",
   "icons": [],
+  "orientation": "landscape",
   "start_url": "index.html"
 }

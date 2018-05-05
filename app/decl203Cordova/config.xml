@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="decl203.msprogrammer.ro" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Decl230</name>
     <description>
         Declaratia 230  -2%
@@ -7,7 +7,6 @@
     <author email="ignatandrei@yahoo.com" href="https://inforomania.herokuapp.com">
          - Andrei Ignat
     </author>
-    <!-- <icon src='www/img/favicon.ico' /> -->
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <access origin="*" />
@@ -27,5 +26,4 @@
     <engine name="android" spec="^7.0.0" />
     <engine name="windows" spec="^5.0.0" />
     <engine name="browser" spec="^5.0.3" />
-    <preference name="Orientation" value="landscape" />
 </widget>

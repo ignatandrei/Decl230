@@ -5,10 +5,14 @@
   <title>Decl230</title>
   <!-- <base href="/"> -->
   <script>
-  
+  var isCordovaApp = !!window.cordova;
+  var hrefApp=".";
+  if(!isCordovaApp){
     var baseHref = window.location.href.split('/');
     baseHref.pop();
-    document.write('<base href="' + baseHref.join('/') + '/" />');
+    hrefApp=baseHref.join('/') +'/';
+  }
+    document.write('<base href="' + hrefApp+ '" />');
     </script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1">
