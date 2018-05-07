@@ -3,8 +3,8 @@ call ng build --prod --build-optimizer
 rem node node_modules\angular-cli-ghpages\bin\angular-cli-ghpages
 robocopy dist ..\decl203Cordova\www\dist  /MIR /XD
 
-%localappdata%\Android\Sdk\emulator.exe -list-avds
-%localappdata%\Android\Sdk\emulator.exe -avd Nexus_5X_API_27_x86
+rem %localappdata%\Android\Sdk\emulator\emulator.exe -list-avds
+rem %localappdata%\Android\Sdk\emulator\emulator.exe -avd Nexus_5X_API_27_x86
 
 
 rem pause

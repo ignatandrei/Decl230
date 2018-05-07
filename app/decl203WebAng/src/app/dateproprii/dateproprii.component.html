@@ -1,6 +1,8 @@
 <section class="compact">
   <clr-stack-view>
-    <clr-stack-header>Date personale ( nu le stocam, doar le punem in PDF)</clr-stack-header>
+    <clr-stack-header>Date personale ( nu le stocam, doar le punem in PDF)
+        <button (click)="doneInput()"> Salveaza date</button>
+    </clr-stack-header> 
 
     <clr-stack-block *ngIf="pers.DeCompletat.length>0">
       <clr-stack-label>De completat</clr-stack-label>

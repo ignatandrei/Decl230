@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "de.mayflower.cordova.android-scrollbar": {
+      "PACKAGE_NAME": "decl203.msprogrammer.ro"
     }
   },
   "dependent_plugins": {}

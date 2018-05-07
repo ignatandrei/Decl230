@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="de.mayflower.cordova.android-scrollbar"
+        version="0.2.1">
+
+    <engines>
+        <engine name="cordova-android" version=">=4.0.0" />
+    </engines>
+
+    <name>android-scrollbar</name>
+
+    <description>
+        Control the vertical scrollbar on Android.
+    </description>
+
+    <repo>
+        https://github.com/mayflower/cordova-android-scrollbar.git
+    </repo>
+
+    <keywords>
+        android,scrollbar
+    </keywords>
+
+    <license>Apache 2.0 License</license>
+
+    <author>Christian Speckner</author>
+
+    <js-module src="www/androidscrollbar.js" name="AndroidScrollbar">
+        <clobbers target="mayflower.AndroidScrollbar" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidScrollbar">
+                <param name="android-package"
+                       value="de.mayflower.cordova.androidscrollbar.AndroidScrollbar"/>
+            </feature>
+        </config-file>
+
+        <source-file
+            src="src/android/AndroidScrollbar.java"
+            target-dir="src/de/mayflower/cordova/androidscrollbar" />
+
+    </platform>
+
+</plugin>

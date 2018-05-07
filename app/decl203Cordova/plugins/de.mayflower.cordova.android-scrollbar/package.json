@@ -1,0 +1,71 @@
+{
+  "_from": "cordova-android-scrollbar",
+  "_id": "cordova-android-scrollbar@0.2.1",
+  "_inBundle": false,
+  "_integrity": "sha1-bhvAk2in1FtbKidIMuiIoPMgU3o=",
+  "_location": "/cordova-android-scrollbar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-android-scrollbar",
+    "name": "cordova-android-scrollbar",
+    "escapedName": "cordova-android-scrollbar",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-android-scrollbar/-/cordova-android-scrollbar-0.2.1.tgz",
+  "_shasum": "6e1bc09368a7d45b5b2a274832e888a0f320537a",
+  "_spec": "cordova-android-scrollbar",
+  "_where": "D:\\github\\Decl230\\app\\decl203Cordova",
+  "author": {
+    "name": "Christian Speckner"
+  },
+  "bugs": {
+    "url": "https://github.com/mayflower/cordova-android-scrollbar/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "de.mayflower.cordova.android-scrollbar",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "\n        Control the vertical scrollbar on Android.\n    ",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browserify": "~4.0.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-notify": "~0.4.1",
+    "grunt-ts": "~5.1.0",
+    "typescript": "~1.6.2",
+    "typescript-deferred": "~0.1.5"
+  },
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    }
+  ],
+  "homepage": "https://github.com/mayflower/cordova-android-scrollbar#readme",
+  "keywords": [
+    "android",
+    "scrollbar",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0 License",
+  "name": "cordova-android-scrollbar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayflower/cordova-android-scrollbar.git"
+  },
+  "version": "0.2.1"
+}
