@@ -18,8 +18,8 @@
     },
     "cordova": {
         "plugins": {
-            "cordova-plugin-whitelist": {},
-            "de.mayflower.cordova.android-scrollbar": {}
+            "cordova-plugin-whitelist": {}
+            
         },
         "platforms": [
             "android",
