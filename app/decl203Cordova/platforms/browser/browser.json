@@ -9,24 +9,11 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "de.mayflower.cordova.android-scrollbar": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {},
-  "modules": [
-    {
-      "file": "plugins/de.mayflower.cordova.android-scrollbar/www/androidscrollbar.js",
-      "id": "de.mayflower.cordova.android-scrollbar.AndroidScrollbar",
-      "pluginId": "de.mayflower.cordova.android-scrollbar",
-      "clobbers": [
-        "mayflower.AndroidScrollbar"
-      ]
-    }
-  ],
+  "modules": [],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.3",
-    "de.mayflower.cordova.android-scrollbar": "0.2.1"
+    "cordova-plugin-whitelist": "1.3.3"
   }
 }

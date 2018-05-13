@@ -9,24 +9,11 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "HelloCordova"
-    },
-    "de.mayflower.cordova.android-scrollbar": {
-      "PACKAGE_NAME": "Decl230"
     }
   },
   "dependent_plugins": {},
-  "modules": [
-    {
-      "id": "de.mayflower.cordova.android-scrollbar.AndroidScrollbar",
-      "file": "plugins/de.mayflower.cordova.android-scrollbar/www/androidscrollbar.js",
-      "pluginId": "de.mayflower.cordova.android-scrollbar",
-      "clobbers": [
-        "mayflower.AndroidScrollbar"
-      ]
-    }
-  ],
+  "modules": [],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.3",
-    "de.mayflower.cordova.android-scrollbar": "0.2.1"
+    "cordova-plugin-whitelist": "1.3.3"
   }
 }

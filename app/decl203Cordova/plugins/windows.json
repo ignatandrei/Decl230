@@ -9,9 +9,6 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "HelloCordova"
-    },
-    "de.mayflower.cordova.android-scrollbar": {
-      "PACKAGE_NAME": "Decl230"
     }
   },
   "dependent_plugins": {}

@@ -30,7 +30,18 @@ var app = {
         this.receivedEvent('deviceready');
 		
     },
-
+    scrollMe:function (){
+    
+        mayflower.AndroidScrollbar.toggleVerticalScrollbarVisibility(true)
+        .then(
+            function() {
+                console.log('Vertical scrollbar enabled');
+            },
+            function(error) {
+                console.log('error', error);
+            }
+        );
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -40,6 +51,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');        
         console.log('Received Event: ' + id);
+        this.scrollMe();
     }
 };
 
